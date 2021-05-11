@@ -10,15 +10,24 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");  
-  
+  console.log("a user connected");
+
   socket.on("disconnect", () => {
     console.log("user disconnected");
-  });  
-  
-  socket.on("chat message", (msg) => {
-    console.log("message: " + msg);
   });
+
+  socket.on("chat message", (msg) => {
+    io.emit("chat message", msg);
+  });
+
+  /* 
+  // This will emit the event to all connected sockets
+  io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' }); 
+  // to send a message to everyone except for a certain emitting socket
+  io.on('connection', (socket) => {
+    socket.broadcast.emit('hi');
+  }); 
+  */
 });
 
 server.listen(3000, () => {
