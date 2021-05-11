@@ -1,0 +1,26 @@
+{
+  "name": "basic-socket-chat",
+  "version": "0.0.1",
+  "description": "simple chat created with socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertouj/basic-socket-chat.git"
+  },
+  "keywords": [],
+  "author": "robertouj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertouj/basic-socket-chat/issues"
+  },
+  "homepage": "https://github.com/robertouj/basic-socket-chat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
